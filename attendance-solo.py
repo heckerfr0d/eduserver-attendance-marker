@@ -47,7 +47,7 @@ def init():
         day = x.strftime("%A").lower()
         if day=="friday" or day=="sunday" or day=="saturday":
             pass
-        elif x.hour == 14 and 0 <= x.minute <= 2:
+        elif x.hour == 11 and 30 <= x.minute <= 32:
             mark()
             time.sleep(82800)
         time.sleep(60)
@@ -58,7 +58,7 @@ def mark():
     br = createBr()
     login(br, username, password)
     x = datetime.datetime.now()
-    while x.hour == 14 and 0 <= x.minute <= 2:
+    while x.hour == 11 and 30 <= x.minute <= 32:
         br.open("https://italeemc.iium.edu.my/calendar/view.php?view=day")
         try:
             br.follow_link(url_regex="https://italeemc\.iium\.edu\.my/mod/attendance/view\.php*", nr=i)
